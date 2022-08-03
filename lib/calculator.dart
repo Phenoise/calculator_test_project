@@ -1,4 +1,4 @@
-import 'package:calculator_project/rss_screen.dart';
+import 'package:calculator_project/widgets/home_page.dart';
 import 'package:flutter/material.dart';
 
 class Calculator extends StatefulWidget {
@@ -37,18 +37,19 @@ class _CalculatorState extends State<Calculator> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Calculator"),
+        title: const Text("Calculator",
+        ),
         elevation: 10,
         backgroundColor: Colors.orange,
           centerTitle: true,
           actions: [
            IconButton(
-            icon: const Icon(Icons.rss_feed_rounded),
+            icon: const Icon(Icons.rss_feed_outlined),
             color: Colors.white,
             iconSize: 30,
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (BuildContext context) => const RSSScreen(),
+              MaterialPageRoute(builder: (BuildContext context) =>  MyHomePage(title: '',),
               ),
             ),
           ),
@@ -184,6 +185,7 @@ class _CalculatorState extends State<Calculator> {
     }
     setState(() {
       text = result;
-    });
+    }
+    );
   }
 }

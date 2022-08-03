@@ -1,10 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:calculator_project/home_screen.dart';
-import 'package:calculator_project/rss_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:calculator_project/calculator.dart';
 import 'package:page_transition/page_transition.dart';
-
 
 
 class SplashScreen extends StatelessWidget {
@@ -19,7 +16,7 @@ class SplashScreen extends StatelessWidget {
         ],
       ),
       backgroundColor: Colors.orange,
-      nextScreen: const Calculator(),
+      nextScreen: Calculator(),
       splashIconSize: 250,
       duration: 4000,
       splashTransition: SplashTransition.fadeTransition,
