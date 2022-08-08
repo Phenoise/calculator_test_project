@@ -15,14 +15,13 @@ class SplashScreen extends StatelessWidget {
           Image.asset('assets/test.png', width: 250,height: 250,),
         ],
       ),
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.blueAccent,
       nextScreen: Calculator(),
       splashIconSize: 250,
-      duration: 4000,
+      duration: 3000,
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.fade,
       animationDuration: const Duration(seconds: 2),
-
     );
   }
 }

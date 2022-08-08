@@ -46,4 +46,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/test.png
-    - assets/logo_calc.png
+    - assets/profile_me.jpg

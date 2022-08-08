@@ -5,7 +5,7 @@ import 'dart:core';
 
 class Parser{
 
-  final url="https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss";
+  final url="https://graph.facebook.com/v10.0/760304638531761?fields=picture&access_token=";
   Future  <RssFeed?> chagerRsss() async {
     final client=http.Client();
     final response=await client.get(Uri.parse(url));

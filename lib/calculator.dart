@@ -1,4 +1,4 @@
-import 'package:calculator_project/widgets/home_page.dart';
+import 'package:calculator_project/facebook_feed.dart';
 import 'package:flutter/material.dart';
 
 class Calculator extends StatefulWidget {
@@ -40,16 +40,16 @@ class _CalculatorState extends State<Calculator> {
         title: const Text("Calculator",
         ),
         elevation: 10,
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.blueAccent,
           centerTitle: true,
           actions: [
            IconButton(
-            icon: const Icon(Icons.rss_feed_outlined),
+            icon: const Icon(Icons.feed_outlined),
             color: Colors.white,
             iconSize: 30,
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (BuildContext context) =>  MyHomePage(title: '',),
+              MaterialPageRoute(builder: (BuildContext context) =>  FacebookScreen(),
               ),
             ),
           ),
@@ -64,13 +64,11 @@ class _CalculatorState extends State<Calculator> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
+                Flexible(
                   child: Text(
                     text,
                     textAlign: TextAlign.left,
-                    style: const TextStyle(color: Colors.black, fontSize: 80),
-
+                    style: const TextStyle(color: Colors.black, fontSize: 60),
                   ),
                 ),
               ],
@@ -81,7 +79,7 @@ class _CalculatorState extends State<Calculator> {
                 numButton("C", Colors.grey, Colors.black),
                 numButton("+/-", Colors.grey, Colors.black),
                 numButton("%", Colors.grey, Colors.black),
-                numButton("/", Colors.orange, Colors.white),
+                numButton("/", Colors.blueAccent, Colors.white),
               ],
             ),
             const SizedBox(height: 10),
@@ -91,7 +89,7 @@ class _CalculatorState extends State<Calculator> {
                 numButton("7", (Colors.grey[850])!, Colors.white),
                 numButton("8", (Colors.grey[850])!, Colors.white),
                 numButton("9", (Colors.grey[850])!, Colors.white),
-                numButton("x", Colors.orange, Colors.white),
+                numButton("x", Colors.blueAccent, Colors.white),
               ],
             ),
             const SizedBox(height: 10),
@@ -101,7 +99,7 @@ class _CalculatorState extends State<Calculator> {
                 numButton("4", (Colors.grey[850])!, Colors.white),
                 numButton("5", (Colors.grey[850])!, Colors.white),
                 numButton("6", (Colors.grey[850])!, Colors.white),
-                numButton("-", Colors.orange, Colors.white),
+                numButton("-", Colors.blueAccent, Colors.white),
               ],
             ),
             const SizedBox(height: 10),
@@ -111,7 +109,7 @@ class _CalculatorState extends State<Calculator> {
                 numButton("1", (Colors.grey[850])!, Colors.white),
                 numButton("2", (Colors.grey[850])!, Colors.white),
                 numButton("3", (Colors.grey[850])!, Colors.white),
-                numButton("+", Colors.orange, Colors.white),
+                numButton("+", Colors.blueAccent, Colors.white),
               ],
             ),
             const SizedBox(height: 10),
@@ -126,7 +124,7 @@ class _CalculatorState extends State<Calculator> {
                   ),
                   child: const Padding(
                     padding: EdgeInsets.fromLTRB(28, 12, 90, 12),
-                    child: Text(
+                    child:  Text (
                       "0",
                       style: TextStyle(
                         fontSize: 35,
@@ -136,7 +134,7 @@ class _CalculatorState extends State<Calculator> {
                   ),
                 ),
                 numButton(".", (Colors.grey[850])!, Colors.white),
-                numButton("=", Colors.orange, Colors.white),
+                numButton("=", Colors.blueAccent, Colors.white),
               ],
             ),
             const SizedBox(height: 10),
@@ -159,7 +157,8 @@ class _CalculatorState extends State<Calculator> {
       text = "";
       firstNumber = 0;
       secondNumber = 0;
-    } else if (btnText == "+" ||
+    } else if (
+        btnText == "+" ||
         btnText == "-" ||
         btnText == "x" ||
         btnText == "/") {
@@ -178,7 +177,7 @@ class _CalculatorState extends State<Calculator> {
         result = (firstNumber * secondNumber).toString();
       }
       if (operation == "/") {
-        result = (firstNumber ~/ secondNumber).toString();
+        result = (firstNumber / secondNumber).toString();
       }
     } else {
       result = int.parse(text + btnText).toString();
